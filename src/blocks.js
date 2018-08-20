@@ -64,14 +64,14 @@ export default function (editor, opt = {}) {
   }
 
   const rowAttr = {
-    class: clsRow,
+    class: clsRow + ' t-row',
     'data-gjs-droppable': `.${clsCell}`,
     'data-gjs-resizable': resizerBtm,
     'data-gjs-name': 'Row',
   };
 
   const colAttr = {
-    class: clsCell,
+    class: clsCell + ' t-cell',
     'data-gjs-draggable': `.${clsRow}`,
     'data-gjs-resizable': resizerRight,
     'data-gjs-name': 'Cell',
@@ -84,8 +84,8 @@ export default function (editor, opt = {}) {
 
   // Make row and column classes private
   const privateCls = [`.${clsRow}`, `.${clsCell}`];
-  editor.on('selector:add', selector =>
-    privateCls.indexOf(selector.getFullName()) >= 0 && selector.set('private', 1))
+  /* editor.on('selector:add', selector =>
+    privateCls.indexOf(selector.getFullName()) >= 0 && selector.set('private', 1)) */
 
   const attrsToString = attrs => {
     const result = [];
