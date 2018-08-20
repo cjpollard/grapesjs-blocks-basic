@@ -84,8 +84,8 @@ export default function (editor, opt = {}) {
 
   // Make row and column classes private
   const privateCls = [`.${clsRow}`, `.${clsCell}`];
-  /* editor.on('selector:add', selector =>
-    privateCls.indexOf(selector.getFullName()) >= 0 && selector.set('private', 1)) */
+  editor.on('selector:add', selector =>
+    privateCls.indexOf(selector.getFullName()) >= 0 && selector.set('private', 1))
 
   const attrsToString = attrs => {
     const result = [];
