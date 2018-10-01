@@ -8,7 +8,7 @@ export default function (editor, opt = {}) {
   const clsRow = `${stylePrefix}row`;
   const clsCell = `${stylePrefix}cell`;
   const styleRow = flexGrid ? `
-    .${clsRow} {
+    .${clsRow}.t-row {
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
@@ -16,11 +16,11 @@ export default function (editor, opt = {}) {
       padding: 10px;
     }
     @media (max-width: 768px) {
-      .${clsRow} {
+      .${clsRow}.t-row {
         flex-wrap: wrap;
       }
     }` : `
-    .${clsRow} {
+    .${clsRow}.t-row {
       display: table;
       padding: 10px;
       width: 100%;
@@ -224,7 +224,7 @@ export default function (editor, opt = {}) {
     attributes: {class:'fa fa-map-o'},
     content: {
       type: 'map',
-      style: {height: '350px'}
+      style: {height: '100%', width: '100%'}
     },
   });
 }
